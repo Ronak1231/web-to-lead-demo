@@ -13,7 +13,7 @@
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -22,11 +22,11 @@
     }
 
     .form-container {
-      background: rgba(0, 0, 0, 0.7);
+      background: rgba(0, 0, 0, 0.75);
       padding: 40px 50px;
       border-radius: 12px;
       width: 90%;
-      max-width: 450px;
+      max-width: 480px;
       color: #fff;
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
     }
@@ -57,7 +57,7 @@
 
     input[type="submit"] {
       width: 100%;
-      margin-top: 20px;
+      margin-top: 25px;
       padding: 12px;
       background-color: #00a1e0;
       color: white;
@@ -86,29 +86,37 @@
 
     <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00De1000000Mnuv" method="POST">
 
+      <!-- Salesforce Hidden Fields -->
       <input type="hidden" name="oid" value="00De1000000Mnuv">
-      <input type="hidden" name="retURL" value="https://ronak1231.github.io/web-to-lead-demo/">
+      <input type="hidden" name="retURL" value="https://ronak1231.github.io/web-to-lead-form/thanks.htmll">
 
-      <!-- Optional debug fields -->
+      <!-- Hard-coded Lead Source -->
+      <input type="hidden" name="lead_source" value="Website">
+
+      <!-- Optional Debugging -->
       <!-- 
       <input type="hidden" name="debug" value="1">
       <input type="hidden" name="debugEmail" value="smita.e@smartnetsoftware.in">
       -->
 
+      <!-- Visible Form Fields -->
       <label for="first_name">First Name</label>
-      <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="Enter your first name" required>
+      <input id="first_name" name="first_name" maxlength="40" type="text" placeholder="Enter your first name" required>
 
       <label for="last_name">Last Name</label>
-      <input id="last_name" maxlength="80" name="last_name" type="text" placeholder="Enter your last name" required>
+      <input id="last_name" name="last_name" maxlength="80" type="text" placeholder="Enter your last name" required>
 
       <label for="email">Email</label>
-      <input id="email" maxlength="80" name="email" type="email" placeholder="Enter your email" required>
+      <input id="email" name="email" maxlength="80" type="email" placeholder="Enter your email" required>
 
       <label for="company">Company</label>
-      <input id="company" maxlength="40" name="company" type="text" placeholder="Enter your company name">
+      <input id="company" name="company" maxlength="40" type="text" placeholder="Enter your company name">
 
       <label for="city">City</label>
-      <input id="city" maxlength="40" name="city" type="text" placeholder="Enter your city">
+      <input id="city" name="city" maxlength="40" type="text" placeholder="Enter your city">
+
+      <label for="mobile">Mobile</label>
+      <input id="mobile" name="mobile" maxlength="40" type="text" placeholder="Enter your mobile number">
 
       <input type="submit" value="Submit Lead">
     </form>
