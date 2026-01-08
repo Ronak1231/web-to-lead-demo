@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Salesforce Web-to-Lead Form</title>
 
   <style>
@@ -13,7 +13,7 @@
     body {
       margin: 0;
       font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
+      background: url('https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&w=1600&q=80') no-repeat center center fixed;
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -21,14 +21,14 @@
       align-items: center;
     }
 
-    .form-wrapper {
+    .form-container {
       background: rgba(0, 0, 0, 0.7);
       padding: 40px 50px;
       border-radius: 12px;
       width: 90%;
       max-width: 450px;
       color: #fff;
-      box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.5);
     }
 
     h2 {
@@ -73,7 +73,7 @@
     }
 
     @media (max-width: 480px) {
-      .form-wrapper {
+      .form-container {
         padding: 25px;
       }
     }
@@ -81,11 +81,19 @@
 </head>
 
 <body>
-  <div class="form-wrapper">
+  <div class="form-container">
     <h2>Contact Form</h2>
-    <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00De1000000Mnuv%22" method="POST">
-      <input type="hidden" name="oid" value="00Dg5000002aM8x">
-      <input type="hidden" name="retURL" value="https://ronak1231.github.io/web-to-lead-demo/thankyou.html">
+
+    <form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00De1000000Mnuv" method="POST">
+
+      <input type="hidden" name="oid" value="00De1000000Mnuv">
+      <input type="hidden" name="retURL" value="https://yourwebsite.com/thankyou.html">
+
+      <!-- Optional debug fields -->
+      <!-- 
+      <input type="hidden" name="debug" value="1">
+      <input type="hidden" name="debugEmail" value="smita.e@smartnetsoftware.in">
+      -->
 
       <label for="first_name">First Name</label>
       <input id="first_name" maxlength="40" name="first_name" type="text" placeholder="Enter your first name" required>
@@ -97,7 +105,7 @@
       <input id="email" maxlength="80" name="email" type="email" placeholder="Enter your email" required>
 
       <label for="company">Company</label>
-      <input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
+      <input id="company" maxlength="40" name="company" type="text" placeholder="Enter your company name">
 
       <label for="city">City</label>
       <input id="city" maxlength="40" name="city" type="text" placeholder="Enter your city">
